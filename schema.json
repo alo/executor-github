@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-github",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "auth"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-github"
+        },
+        "auth": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "user",
+                "password"
+              ],
+              "properties": {
+                "user": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "token"
+              ],
+              "properties": {
+                "token": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "params": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "user",
+            "repo"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string",
+              "pattern": "listIssues"
+            },
+            "user": {
+              "type": "string"
+            },
+            "repo": {
+              "type": "string"
+            },
+            "options": {
+              "type": "object"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
