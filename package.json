@@ -1,6 +1,6 @@
 {
-  "name": "executor-github",
-  "version": "0.0.0-development",
+  "name": "alo-executor-github",
+  "version": "1.0.0",
   "description": "Runnerty module: github executor",
   "author": "Coderty",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "github-api": "^3.0.0"
   },
   "scripts": {
-    "semantic-release": "semantic-release",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "travis-deploy-once": "travis-deploy-once",
     "commit": "git-cz"
   },
