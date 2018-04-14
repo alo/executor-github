@@ -1,5 +1,5 @@
 "use strict";
-const GitHub = require('github-api');
+const GitHub = require("github-api");
 
 const Execution = global.ExecutionClass;
 
@@ -25,11 +25,16 @@ class githubExecutor extends Execution {
 
     const command = params.command;
     const options = params.options;
+    let issues;
 
     switch (command) {
       case "listIssues":
-        const issues = gh.getIssues(params.user, params.repo);
-        issues.listIssues(options, (err, data, response) => { callback(err, data, response) });
+        issues = gh.getIssues(params.user, params.repo);
+        issues.listIssues(options, (err, data, response) => {
+          callback(err, data, response);
+        });
+        break;
+      default:
         break;
     }
 
