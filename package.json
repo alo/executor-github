@@ -24,7 +24,9 @@
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "travis-deploy-once": "travis-deploy-once",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "eslint": "eslint .",
+    "test": "npm run eslint"
   },
   "devDependencies": {
     "commitizen": "^2.9.6",
