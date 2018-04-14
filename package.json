@@ -1,13 +1,13 @@
 {
-  "name": "@runnerty/executor-github",
-  "version": "1.0.0",
+  "name": "executor-github",
+  "version": "0.0.0-development",
   "description": "Runnerty module: github executor",
   "author": "Coderty",
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/runnerty/executor-github.git"
+    "url": "https://github.com/alo/executor-github.git"
   },
   "keywords": [
     "runnerty",
@@ -15,10 +15,24 @@
     "github"
   ],
   "bugs": {
-    "url": "https://github.com/runnerty/executor-github/issues"
+    "url": "https://github.com/alo/executor-github/issues"
   },
-  "homepage": "https://github.com/runnerty/executor-github#readme",
+  "homepage": "https://github.com/alo/executor-github#readme",
   "dependencies": {
     "github-api": "^3.0.0"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once",
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "conventional-changelog": "^1.1.23",
+    "semantic-release": "^15.1.7",
+    "travis-deploy-once": "^4.4.1"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
