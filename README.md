@@ -1,7 +1,8 @@
 # Github executor for [Runnerty]:
 
-### Methods:
-* Configuration sample. We can config it via user and password or via token:
+## Config
+
+We can config it via user and password or via token:
 ```json
 {
   "id": "github_default",
@@ -24,8 +25,9 @@ or
 }
 ```
 
+## Plan
 
-* Plan sample to list issues of a repository filtering by label and update date: 
+- List issues of a repository filtering by label and update date: 
 ```json
 {
   "id": "github_default",
