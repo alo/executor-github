@@ -1,6 +1,6 @@
 {
   "name": "alo-executor-github",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Runnerty module: github executor",
   "author": "Coderty",
   "license": "MIT",
