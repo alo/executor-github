@@ -18,8 +18,8 @@ class githubExecutor extends Execution {
       });
     } else {
       gh = new GitHub({
-        username: params.auth.user,
-        password: params.auth.pwd
+        user: params.auth.user,
+        password: params.auth.password
       });
     }
 

@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "postpublish": "greenkeeper-postpublish",
     "commit": "git-cz",
