@@ -1,10 +1,18 @@
 {
   "name": "alo-executor-github",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Runnerty module: github executor",
   "author": "Coderty",
   "license": "MIT",
   "main": "index.js",
+  "scripts": {
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "travis-deploy-once": "travis-deploy-once",
+    "postpublish": "greenkeeper-postpublish",
+    "commit": "git-cz",
+    "eslint": "eslint .",
+    "test": "npm run eslint"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/alo/executor-github.git"
@@ -21,21 +29,17 @@
   "dependencies": {
     "github-api": "^3.0.0"
   },
-  "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "travis-deploy-once": "travis-deploy-once",
-    "commit": "git-cz",
-    "eslint": "eslint .",
-    "test": "npm run eslint"
-  },
   "devDependencies": {
     "commitizen": "^2.9.6",
-    "conventional-changelog": "^1.1.23",
+    "cz-conventional-changelog": "^1.2.0",
     "eslint": "^4.19.1",
+    "greenkeeper-postpublish": "1.0.1",
     "semantic-release": "^15.1.7",
     "travis-deploy-once": "^4.4.1"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
