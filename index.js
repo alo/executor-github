@@ -35,6 +35,7 @@ class githubExecutor extends Execution {
         });
         break;
       default:
+        callback("Invalid option");
         break;
     }
 
