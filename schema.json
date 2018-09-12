@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "@runnerty-executor-github",
+  "title": "alo-executor-github",
   "definitions": {
     "config": {
       "type": "object",
@@ -15,7 +15,7 @@
         },
         "type": {
           "type": "string",
-          "pattern": "@runnerty-executor-github"
+          "pattern": "alo-executor-github"
         },
         "auth": {
           "oneOf": [
