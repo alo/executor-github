@@ -6,7 +6,7 @@ We can config it via user and password or via token:
 ```json
 {
   "id": "github_default",
-  "type": "@runnerty-executor-github",
+  "type": "alo-executor-github",
   "auth":{
     "token": "MY_TOKEN_HERE"
   }
@@ -17,7 +17,7 @@ or
 ```json
 {
   "id": "github_default",
-  "type": "@runnerty-executor-github",
+  "type": "alo-executor-github",
   "auth":{
     "username": "MY_USERNAME",
     "password": "MY_PASSWORD",

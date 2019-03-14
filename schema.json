@@ -4,11 +4,7 @@
   "definitions": {
     "config": {
       "type": "object",
-      "required": [
-        "id",
-        "type",
-        "auth"
-      ],
+      "required": ["id", "type", "auth"],
       "properties": {
         "id": {
           "type": "string"
@@ -21,12 +17,9 @@
           "oneOf": [
             {
               "type": "object",
-              "required": [
-                "user",
-                "password"
-              ],
+              "required": ["username", "password"],
               "properties": {
-                "user": {
+                "username": {
                   "type": "string"
                 },
                 "password": {
@@ -36,9 +29,7 @@
             },
             {
               "type": "object",
-              "required": [
-                "token"
-              ],
+              "required": ["token"],
               "properties": {
                 "token": {
                   "type": "string"
@@ -53,19 +44,22 @@
       "oneOf": [
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "user",
-            "repo"
-          ],
+          "required": ["id", "command", "user", "repo"],
           "properties": {
             "id": {
               "type": "string"
             },
             "command": {
-              "type": "string",
-              "pattern": "listIssues"
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "listIssues"
+                },
+                {
+                  "type": "string",
+                  "pattern": "listReleases"
+                }
+              ]
             },
             "user": {
               "type": "string"

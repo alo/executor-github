@@ -1,5 +1,5 @@
-"use strict";
-const GitHub = require("github-api");
+'use strict';
+const GitHub = require('github-api');
 
 const Execution = global.ExecutionClass;
 
@@ -16,41 +16,53 @@ class githubExecutor extends Execution {
       gh = new GitHub({
         token: params.auth.token
       });
-    } else {
+    } else if (params.auth.username) {
       gh = new GitHub({
-        user: params.auth.user,
+        username: params.auth.username,
         password: params.auth.password
       });
+    } else {
+      gh = new GitHub();
     }
 
     const command = params.command;
     const options = params.options;
-    let issues;
 
     switch (command) {
-      case "listIssues":
-        issues = gh.getIssues(params.user, params.repo);
+      case 'listIssues':
+        let issues = gh.getIssues(params.user, params.repo);
         issues.listIssues(options, (err, data, response) => {
-          callback(err, data, response);
+          const res = {
+            length: data.length
+          };
+          callback(err, data.length, res);
+        });
+        break;
+      case 'listReleases':
+        let repo = gh.getRepo(params.user, params.repo);
+        repo.listReleases((err, data, response) => {
+          const res = {
+            length: data.length
+          };
+          callback(err, data.length, res);
         });
         break;
       default:
-        callback("Invalid option");
+        callback('Invalid option');
         break;
     }
 
     function callback(err, data, response) {
       if (err) {
         const endOptions = {
-          end: "error",
+          end: 'error',
           messageLog: err,
-          err_output: err,
-          extra_output: response
+          err_output: err
         };
         _this.end(endOptions);
       } else {
         const endOptions = {
-          end: "end",
+          end: 'end',
           data_output: data,
           extra_output: response
         };
